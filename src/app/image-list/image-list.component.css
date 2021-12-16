@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+.avatar{
+  margin-bottom: 7px;
+}
+
+button {
+  width: 40px;
+  height: 35px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  outline: 0;
+  position: relative;
+  z-index: 2000;
+}
+
+.search-button {
+  float: top;
+  margin-left:-50px;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+ input {
+  font-size: 2.12em;
+  height: 46px;
+  padding-bottom: 1em;
+  padding-left: 0;
+  background: none;
+  border: none;
+  outline: 0;
+  border-bottom: 4px solid #e4e4e4;
+  transition: border-color 0.4s;
+}
+
+.search-form {
+  padding-bottom: 20px;
+}
+.search-form input:only-of-type {
+  width: 90%;
+  padding-right: 35px;
+  background: #fff;
+  border: 1px solid rgb(179, 179, 179);
+  font-size: 1.1em;
+  text-indent: 18px;
+  padding: 0 100px 0 0;
+  border-radius:22px;
+}
+
+.is-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.results{
+  padding: 8px;
+  margin-bottom: 25px;
+  font-size:0.85em;
+  color:#6d6c6c;
+}
+
+h2 {
+  padding-bottom: 20px;
+  font-size:1.1em;
+  color:#6d6c6c;
+}
+
+.images {
+  min-height:100px;
+}
+
+.list-view {
+  display:flex;
+  flex-flow:row wrap;
+  justify-content: space-around;
+  list-style: none;
+  justify-items: flex-start;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+/*   height: auto; lazy load fixed height already defined*/
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.6;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+/* hover ends */
+
+.likes {
+  color:rgb(221, 53, 53);
+}
+
+.tags {
+  color:rgb(236, 140, 30);
+}
+
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}

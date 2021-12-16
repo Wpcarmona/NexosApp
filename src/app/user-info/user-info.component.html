@@ -1,0 +1,32 @@
+
+<div class="back">
+    <a href="" routerLink="/" routerLinkActive="active" class="back-home home">
+        &laquo; Home
+    </a>
+</div>
+
+<div class="row">
+    <div *ngFor="let image of images" class="column container images" (deferLoad)="image.show = true">
+        <ng-container *ngIf="image.show">
+            <img src={{image.webformatURL}} class="image">
+          </ng-container>
+              <div class="middle">
+                  <mat-card>
+                  <mat-card-content>
+                          <a href="{{ image.pageURL }}" target="_bank" rel="noopener">
+                            <mat-card-header>
+                              <div class="avatar" mat-card-avatar [ngStyle]="{'background-image':'url('+ image.userImageURL +')', 'background-size':'40px 40px'}"></div>
+                              <mat-card-subtitle>User: {{ image.user }}</mat-card-subtitle>
+                            </mat-card-header>
+                          </a>
+                          <mat-card-title-group>
+                              <span class="tags"><mat-icon>loyalty</mat-icon>{{ image.tags }}</span>
+                              <span class="comment"><mat-icon>comment</mat-icon> {{ image.comments }}</span>
+                              <span class="likes"><mat-icon>thumb_up_alt</mat-icon>{{ image.likes }}</span>
+                          </mat-card-title-group>
+          </mat-card-content>
+          </mat-card>
+        </div>
+          </div>
+        </div>
+
