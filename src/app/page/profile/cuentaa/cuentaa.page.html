@@ -1,0 +1,52 @@
+<ion-content style="margin-top: 20%;">
+
+  <ion-card style="margin-top: 10%;">
+    <ion-card-header class="text-center" type="text">
+      <ion-card-title type="text" class="text-center">
+        Cuenta
+      </ion-card-title>
+      <br>
+      <ion-label>
+        <h2>
+          ahorros  
+        </h2>
+      </ion-label>
+      <ion-label>
+        <h2>
+          {{cuenta}}
+        </h2>
+      </ion-label>
+      <ion-label>
+        <h2 class="text-right">
+          saldo: $ {{saldo}}
+        </h2>
+      </ion-label>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-label>
+      <h1 class="text-center">
+        Movimientos
+      </h1>
+    </ion-label>
+    <br>
+    <ion-label>
+      <h3>
+        aun no tiene movimientos en su cuenta
+      </h3>
+    </ion-label>
+    </ion-card-content>
+  </ion-card>
+  
+  <div class="positionbtn" class="ion-padding" >
+    <ion-fab horizontal="center"  >
+      <ion-fab-button (click)="dismissModal()" color="danger">
+        <ion-icon name="close"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+  
+  </ion-content>
+  <ion-footer>
+    
+  </ion-footer>

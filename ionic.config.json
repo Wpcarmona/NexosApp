@@ -1,0 +1,7 @@
+{
+  "name": "Limpio",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

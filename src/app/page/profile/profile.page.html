@@ -1,0 +1,87 @@
+<ion-header class="ion-no-border">
+   <div class="positionText">
+    <div class="sign-btn-wrap4" id="main">
+      <ion-button  shape="round" fill="clear" (click)="logout()" >
+        <ion-icon name="log-out" color="light" style="width: 25px; height: 25px;"></ion-icon>
+      </ion-button>
+     </div>
+    <h5 class="sign-btn-wrap3" >Hola, {{names}}</h5>
+    <h5 class="sign-btn-wrap1" >{{document}}</h5>
+ 
+
+  </div>
+  <ion-img   src="../../assets/NOh5Uouf5W9pqEIw.jpg"></ion-img>
+</ion-header>
+
+
+
+
+<ion-content>
+     
+<div color="light">
+  <ion-card-content class="text-center">
+    <ion-card-title type="text" class="text-center">Tus cuentas</ion-card-title>
+  </ion-card-content>
+</div>
+<ion-segment color="secondary" value="segment1" (ionChange)="segmentChanged($event)">
+  <ion-segment-button value="segment1">
+    <ion-label>Cuenta corrientes</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="segment2">
+    <ion-label>Cuentas de ahorro</ion-label>
+  </ion-segment-button>
+</ion-segment>
+<div scrolly="true" style="max-height:45%;">
+    <div *ngIf="segment1">
+      <ion-card *ngFor="let cuentaCorriente of cuentaCorriente" (click)="modalcuentac(cuentaCorriente.key)">
+        <ion-card-header>
+          <ion-label>
+            <h1>
+              Cuenta corriente
+              <div class="text-right">
+              <ion-icon name="arrow-forward"></ion-icon>
+            </div>
+            </h1>
+            <h5>
+              Corriente: {{cuentaCorriente.cuenta}}
+            </h5>
+          </ion-label>
+        </ion-card-header>
+        <div class="text-right">
+        <ion-card-content>
+          Saldo disponible: $ {{cuentaCorriente.saldo}}
+        </ion-card-content>
+      </div>
+      </ion-card>
+    </div> 
+  </div>
+    <div scrolly="true" style="max-height:45%;">
+    <div *ngIf="segment2">
+      <ion-card *ngFor="let cuentaAhorro of cuentaAhorro" (click)="modalcuentaa(cuentaAhorro.key)">
+        <ion-card-header>
+          <ion-label>
+            <h1>
+              Cuenta de ahorro
+              <div class="text-right">
+                <ion-icon name="arrow-forward"></ion-icon>
+              </div>
+            </h1>
+            <h5>
+              Corriente: {{cuentaAhorro.cuenta}}
+            </h5>
+          </ion-label>
+        </ion-card-header>
+        <div class="text-right">
+        <ion-card-content>
+          Saldo disponible: $ {{cuentaAhorro.saldo}}
+        </ion-card-content>
+      </div>
+      </ion-card>
+    </div> 
+  </div>
+    
+    <div class="sign-btn-wrap2"> 
+      <ion-button  shape="round" (click)="modal()"  fill="solid" class="sign-btn">Registrar cuenta</ion-button>
+    </div>
+</ion-content>
+

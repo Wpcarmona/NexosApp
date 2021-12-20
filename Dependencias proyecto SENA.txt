@@ -1,0 +1,17 @@
+ionic integrations enable cordova
+npm i @firebase/auth
+npm install firebase @angular/fire --save
+npm install debug --save
+npm i @ionic-native/status-bar
+npm i @ionic-native/core
+npm i router-link
+npm i lottie-web ngx-lottie
+npm install @ngx-translate/core --save
+npm install @ngx-translate/http-loader --save
+ionic cordova plugin add cordova-plugin-camera
+npm install @ionic-native/camera
+npm i @ionic-native/splash-screen
+npm install chart.js 
+npm install --save ng2-charts
+npm i -D @types/chart.js 
+npm install ng2-cahrts@next --save
