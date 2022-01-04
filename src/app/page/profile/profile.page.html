@@ -1,63 +1,68 @@
 <ion-header class="ion-no-border">
-   <div class="positionText">
-    <div class="sign-btn-wrap4" id="main">
-      <ion-button  shape="round" fill="clear" (click)="logout()" >
-        <ion-icon name="log-out" color="light" style="width: 25px; height: 25px;"></ion-icon>
-      </ion-button>
-     </div>
-    <h5 class="sign-btn-wrap3" >Hola, {{names}}</h5>
-    <h5 class="sign-btn-wrap1" >{{document}}</h5>
- 
-
+  <div class="positionText">
+    <div class="sign-btn-wrap4">
+      <ion-chip outline color="light" (click)="logout()">
+        <ion-label>Cerrar Sesión</ion-label>
+        <ion-icon name="log-out"></ion-icon>
+      </ion-chip>
+    </div>
+    <h5 class="sign-btn-wrap3">Hola, {{names}}</h5>
+    <h5 class="sign-btn-wrap1">{{document}}</h5>
   </div>
-  <ion-img   src="../../assets/NOh5Uouf5W9pqEIw.jpg"></ion-img>
+  <ion-img src="../../assets/NOh5Uouf5W9pqEIw.jpg"></ion-img>
 </ion-header>
 
-
-
-
 <ion-content>
-     
-<div color="light">
-  <ion-card-content class="text-center">
-    <ion-card-title type="text" class="text-center">Tus cuentas</ion-card-title>
-  </ion-card-content>
-</div>
-<ion-segment color="secondary" value="segment1" (ionChange)="segmentChanged($event)">
-  <ion-segment-button value="segment1">
-    <ion-label>Cuenta corrientes</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="segment2">
-    <ion-label>Cuentas de ahorro</ion-label>
-  </ion-segment-button>
-</ion-segment>
-<div scrolly="true" style="max-height:45%;">
+  <div color="light">
+    <ion-card-content class="text-center">
+      <ion-card-title type="text" class="text-center"
+        >Tus cuentas</ion-card-title
+      >
+    </ion-card-content>
+  </div>
+  <ion-segment
+    color="secondary"
+    value="segment1"
+    (ionChange)="segmentChanged($event)"
+  >
+    <ion-segment-button value="segment1">
+      <ion-label>Cuenta corrientes</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="segment2">
+      <ion-label>Cuentas de ahorro</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div scrolly="true" style="max-height: 60%">
     <div *ngIf="segment1">
-      <ion-card *ngFor="let cuentaCorriente of cuentaCorriente" (click)="modalcuentac(cuentaCorriente.key)">
+      <ion-card
+        *ngFor="let cuentaCorriente of cuentaCorriente"
+        (click)="modalcuentac(cuentaCorriente.key)"
+      >
         <ion-card-header>
           <ion-label>
             <h1>
               Cuenta corriente
               <div class="text-right">
-              <ion-icon name="arrow-forward"></ion-icon>
-            </div>
+                <ion-icon name="arrow-forward"></ion-icon>
+              </div>
             </h1>
-            <h5>
-              Corriente: {{cuentaCorriente.cuenta}}
-            </h5>
+            <h5>Corriente: {{cuentaCorriente.cuenta}}</h5>
           </ion-label>
         </ion-card-header>
         <div class="text-right">
-        <ion-card-content>
-          Saldo disponible: $ {{cuentaCorriente.saldo}}
-        </ion-card-content>
-      </div>
+          <ion-card-content>
+            Saldo disponible: $ {{cuentaCorriente.saldo}}
+          </ion-card-content>
+        </div>
       </ion-card>
-    </div> 
+    </div>
   </div>
-    <div scrolly="true" style="max-height:45%;">
+  <div scrolly="true" style="max-height: 60%">
     <div *ngIf="segment2">
-      <ion-card *ngFor="let cuentaAhorro of cuentaAhorro" (click)="modalcuentaa(cuentaAhorro.key)">
+      <ion-card
+        *ngFor="let cuentaAhorro of cuentaAhorro"
+        (click)="modalcuentaa(cuentaAhorro.key)"
+      >
         <ion-card-header>
           <ion-label>
             <h1>
@@ -66,22 +71,44 @@
                 <ion-icon name="arrow-forward"></ion-icon>
               </div>
             </h1>
-            <h5>
-              Corriente: {{cuentaAhorro.cuenta}}
-            </h5>
+            <h5>Corriente: {{cuentaAhorro.cuenta}}</h5>
           </ion-label>
         </ion-card-header>
         <div class="text-right">
-        <ion-card-content>
-          Saldo disponible: $ {{cuentaAhorro.saldo}}
-        </ion-card-content>
-      </div>
+          <ion-card-content>
+            Saldo disponible: $ {{cuentaAhorro.saldo}}
+          </ion-card-content>
+        </div>
       </ion-card>
-    </div> 
-  </div>
-    
-    <div class="sign-btn-wrap2"> 
-      <ion-button  shape="round" (click)="modal()"  fill="solid" class="sign-btn">Registrar cuenta</ion-button>
     </div>
-</ion-content>
+  </div>
 
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button class="color-btn">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button
+        color="light"
+        data-desc="Transferir dinero por QR"
+        (click)="modalcanqr()"
+      >
+        <ion-icon name="qr-code"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button
+        color="light"
+        data-desc="Recibir dinero por QR"
+        (click)="tranfer()"
+      >
+        <ion-icon name="qr-code"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button
+        color="light"
+        data-desc="Registrar cuenta"
+        (click)="modalcuenta()"
+      >
+        <ion-icon name="card"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

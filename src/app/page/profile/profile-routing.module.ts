@@ -16,6 +16,14 @@ const routes: Routes = [
     path: 'cuentaa',
     loadChildren: () => import('./cuentaa/cuentaa.module').then( m => m.CuentaaPageModule)
   },
+  {
+    path: 'scanqr',
+    loadChildren: () => import('./scanqr/scanqr.module').then( m => m.ScanqrPageModule)
+  },
+  {
+    path: 'tranfer',
+    loadChildren: () => import('./tranfer/tranfer.module').then( m => m.TranferPageModule)
+  },
   /*{
     path: 'modal/:id',
     loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)

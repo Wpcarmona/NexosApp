@@ -1,0 +1,107 @@
+<ion-content style="margin-top: 20%">
+  <ion-card style="margin-top: 10%">
+    <ion-card-header class="text-center" type="text">
+      <ion-card-title type="text" class="text-center">
+        Realizar transferencia
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="ValidationFormUSer">
+        <ion-list>
+          <ion-item>
+            <ion-icon name="person-outline"></ion-icon>
+            <ion-input
+              style="margin-left: 2%"
+              name="names"
+              type="text"
+              placeholder="Alias"
+              formControlName="profileNames1"
+              [(ngModel)]="val0"
+            >
+            </ion-input>
+          </ion-item>
+          <div>
+            <ng-container
+              *ngFor="let validation of validationMessages.profileNames1"
+            >
+              <div
+                class="error_message"
+                *ngIf="ValidationFormUSer.get('profileNames1').hasError(validation.type) && (ValidationFormUSer.get('profileNames1').dirty || ValidationFormUSer.get('profileNames1').touched)"
+              >
+                {{validation.message}}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item>
+            <ion-icon name="business"></ion-icon>
+            <ion-input
+              style="margin-left: 2%"
+              name="document"
+              type="text"
+              placeholder="Entidad Bancaria"
+              formControlName="profileDocument1"
+              [(ngModel)]="val1"
+            >
+            </ion-input>
+          </ion-item>
+          <div>
+            <ng-container
+              *ngFor="let validation of validationMessages.profileDocument1"
+            >
+              <div
+                class="error_message"
+                *ngIf="ValidationFormUSer.get('profileDocument1').hasError(validation.type) && (ValidationFormUSer.get('profileDocument1').dirty || ValidationFormUSer.get('profileDocument1').touched)"
+              >
+                {{validation.message}}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item>
+            <ion-icon name="logo-bitcoin"></ion-icon>
+            <ion-input
+              style="margin-left: 2%"
+              name="town"
+              type="number"
+              placeholder="ingrese el monto a transferir"
+              formControlName="profileTown1"
+              [(ngModel)]="val2"
+            >
+            </ion-input>
+          </ion-item>
+          <div>
+            <ng-container
+              *ngFor="let validation of validationMessages.profileTown1"
+            >
+              <div
+                class="error_message"
+                *ngIf="ValidationFormUSer.get('profileTown1').hasError(validation.type) && (ValidationFormUSer.get('profileTown1').dirty || ValidationFormUSer.get('profileTown1').touched)"
+              >
+                {{validation.message}}
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="sign-btn-wrap">
+            <ion-button
+              shape="round"
+              (click)="CodificarTexto()"
+              fill="solid"
+              class="sign-btn"
+              [disabled]="!ValidationFormUSer.valid"
+              >Generar codigo QR</ion-button
+            >
+          </div>
+        </ion-list>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="positionbtn" class="ion-padding">
+    <ion-fab horizontal="center">
+      <ion-fab-button (click)="dismissModal()" color="danger">
+        <ion-icon name="close"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>

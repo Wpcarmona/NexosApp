@@ -1,114 +1,107 @@
-.slide{
-    height: 100%;
-    width: 100%;
+.slide {
+  height: 100%;
+  width: 100%;
 }
 ion-slides {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
-/*ion-content{
-  --ion-background-color: whitesmoke;
-}*/
-
-ion-list{
+ion-list {
   --ion-background-color: white;
 }
 
-.sign-btn-wrap3{
+.sign-btn-wrap3 {
   text-align: center;
   padding-top: 10px;
   margin-top: 0.5%;
   margin-left: 45%;
   position: absolute;
   font-size: 20px;
-  color: #F4F6FA;
- .sign-btn{
-   --ion-primary-color:#215AB7;
-   --background-activated:#E1EAF9;
-   --background-focused:#E1EAF9;
-   --background-hover:#647B9D;
-   color:#F4F6FA;
-   border-radius: 25px;
-   --background:#215AB7;
-   background-color: #215AB7;
-   position: relative;
-   margin-top: 1%;
-   margin-left: 1%;
-   padding-top: 20px;
- }
+  color: #f4f6fa;
+  .sign-btn {
+    --ion-primary-color: #215ab7;
+    --background-activated: #e1eaf9;
+    --background-focused: #e1eaf9;
+    --background-hover: #647b9d;
+    color: #f4f6fa;
+    border-radius: 25px;
+    --background: #215ab7;
+    background-color: #215ab7;
+    position: relative;
+    margin-top: 1%;
+    margin-left: 1%;
+    padding-top: 20px;
+  }
 }
-.sign-btn-wrap4{
+.sign-btn-wrap4 {
   text-align: center;
   padding-top: 1px;
   margin-top: 0.1%;
   margin-left: 1px;
   position: absolute;
   font-size: 20px;
-  color: #F4F6FA;
-
+  color: #f4f6fa;
 }
-.sign-btn-wrap{
-    text-align: center;
-    padding-top: 20px;
-    
-   .sign-btn{
-     --ion-primary-color:#215AB7;
-     --background:#215AB7;
-     --background-activated:#E1EAF9;
-     --background-focused:#E1EAF9;
-     --background-hover:#647B9D;
-     color:#F4F6FA;
-     background-color: #215AB7;
-     border-radius: 25px;
+.sign-btn-wrap {
+  text-align: center;
+  padding-top: 20px;
 
-   }
- }
+  .sign-btn {
+    --ion-primary-color: #215ab7;
+    --background: #215ab7;
+    --background-activated: #e1eaf9;
+    --background-focused: #e1eaf9;
+    --background-hover: #647b9d;
+    color: #f4f6fa;
+    background-color: #215ab7;
+    border-radius: 25px;
+  }
+}
 
- .sign-btn-wrap2{
+.sign-btn-wrap2 {
   text-align: center;
   position: absolute;
-    right: 20%;
-    left: 20%;
-    bottom:   75px;
- .sign-btn{
-   --ion-primary-color:#215AB7;
-   --background:#215AB7;
-   --background-activated:#E1EAF9;
-   --background-focused:#E1EAF9;
-   --background-hover:#647B9D;
-   color:#F4F6FA;
-   background-color: #215AB7;
-   border-radius: 25px;
-
- }
+  right: 20%;
+  left: 20%;
+  bottom: 75px;
+  .sign-btn {
+    --ion-primary-color: #215ab7;
+    --background: #215ab7;
+    --background-activated: #e1eaf9;
+    --background-focused: #e1eaf9;
+    --background-hover: #647b9d;
+    color: #f4f6fa;
+    background-color: #215ab7;
+    border-radius: 25px;
+  }
 }
-.sign-btn-wrap5{
+.sign-btn-wrap5 {
   text-align: center;
   position: absolute;
-  
-    bottom:   0px;
 
+  bottom: 0px;
 }
- div[scrollx=true],div[scrolly=true] {
+div[scrollx="true"],
+div[scrolly="true"] {
   position: relative;
   overflow: hidden;
 }
 
-div[scrollx=true] {
- overflow-x: auto;
+div[scrollx="true"] {
+  overflow-x: auto;
 }
 
-div[scrolly=true] {
- overflow-y: auto;
+div[scrolly="true"] {
+  overflow-y: auto;
 }
-.text-center{
+.text-center {
   text-align: center;
 }
 
-.color{
+.color {
   color: white;
-  background-color: #215AB7;
+  background-color: #215ab7;
   text-align: center;
 }
 
@@ -127,13 +120,8 @@ ion-modal.stack-modal {
   background: #222;
 }
 
-
-
-.positionbtn{
-
+.positionbtn {
   left: 50%;
   right: 50%;
   bottom: 20% !important;
 }
-
-

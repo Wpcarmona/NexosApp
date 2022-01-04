@@ -18,6 +18,7 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { Camera } from '@ionic-native/camera/ngx';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 export function HttpLoaderFactory(httpClient:HttpClient){
   return new TranslateHttpLoader(httpClient, "../assets/i18n/",".json");
@@ -39,6 +40,7 @@ export function HttpLoaderFactory(httpClient:HttpClient){
   ],
   providers: [
     Camera,
+    BarcodeScanner,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent],

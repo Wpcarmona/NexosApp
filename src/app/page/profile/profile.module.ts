@@ -11,13 +11,16 @@ import { ModalPage } from './modal/modal.page';
 import { ModalPageModule } from './modal/modal.module';
 import { CuentacPageModule } from './cuentac/cuentac.module';
 import { CuentaaPageModule } from './cuentaa/cuentaa.module';
+import { ScanqrPageModule } from './scanqr/scanqr.module';
+import { TranferPageModule } from './tranfer/tranfer.module';
 
 @NgModule({
-
   entryComponents: [
     ModalPage,
     CuentacPageModule,
-    CuentaaPageModule
+    CuentaaPageModule,
+    ScanqrPageModule,
+    TranferPageModule,
   ],
   imports: [
     CommonModule,
@@ -27,8 +30,10 @@ import { CuentaaPageModule } from './cuentaa/cuentaa.module';
     ReactiveFormsModule,
     ModalPageModule,
     CuentacPageModule,
-    CuentaaPageModule
+    CuentaaPageModule,
+    ScanqrPageModule,
+    TranferPageModule,
   ],
-  declarations: [ProfilePage]
+  declarations: [ProfilePage],
 })
 export class ProfilePageModule {}

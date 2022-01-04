@@ -1,35 +1,34 @@
-.slide{
-    height: 100%;
-    width: 100%;
+.slide {
+  height: 100%;
+  width: 100%;
 }
 ion-slides {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
-ion-content{
+ion-content {
   background-color: whitesmoke;
   --ion-background-color: whitesmoke;
 }
 
-ion-card{
+ion-card {
   background-color: white;
-  --ion-background-color:white
+  --ion-background-color: white;
 }
 
-ion-menu{
-  ion-content{
+ion-menu {
+  ion-content {
     background-color: whitesmoke;
-  --ion-background-color: whitesmoke;
+    --ion-background-color: whitesmoke;
   }
-  ion-card{
+  ion-card {
     background-color: white;
-  --ion-background-color: white;
-
+    --ion-background-color: white;
   }
-  ion-item{
+  ion-item {
     background-color: white;
-  --ion-background-color: white;
+    --ion-background-color: white;
   }
 }
 
@@ -45,102 +44,120 @@ ion-modal.stack-modal {
   --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
 }
 
-ion-list{
+ion-list {
   --ion-background-color: white;
 }
 
-.sign-btn-wrap3{
+.sign-btn-wrap3 {
   text-align: center;
   top: 50%;
   left: 5%;
   font-size: 20px;
   position: absolute;
-  color: #F4F6FA;
+  color: #f4f6fa;
 }
-.sign-btn-wrap1{
+.sign-btn-wrap1 {
   text-align: center;
   top: 65%;
   left: 5%;
   font-size: 20px;
   position: absolute;
-  color: #F4F6FA;
+  color: #f4f6fa;
 }
-.sign-btn-wrap4{
+.sign-btn-wrap4 {
   text-align: center;
   padding-top: 1px;
-  margin-top: 0.1%;
-  margin-left: 1px;
+  margin-top: 0.5%;
+  right: 10px;
   position: absolute;
   font-size: 20px;
-  color: #F4F6FA;
-
+  color: #f4f6fa;
 }
-.sign-btn-wrap{
-    text-align: center;
-    padding-top: 20px;
-    
-   .sign-btn{
-     --ion-primary-color:#215AB7;
-     --background:#215AB7;
-     --background-activated:#E1EAF9;
-     --background-focused:#E1EAF9;
-     --background-hover:#647B9D;
-     color:#F4F6FA;
-     background-color: #215AB7;
-     border-radius: 25px;
+.sign-btn-wrap {
+  text-align: center;
+  padding-top: 20px;
 
-   }
- }
+  .sign-btn {
+    --ion-primary-color: #215ab7;
+    --background: #215ab7;
+    --background-activated: #e1eaf9;
+    --background-focused: #e1eaf9;
+    --background-hover: #647b9d;
+    color: #f4f6fa;
+    background-color: #215ab7;
+    border-radius: 25px;
+  }
+}
 
- .sign-btn-wrap2{
+.sign-btn-wrap2 {
   text-align: center;
   position: absolute;
-    right: 20%;
-    left: 20%;
-    bottom:   25px;
- .sign-btn{
-   --ion-primary-color:#180151;
-   --background:#180151;
-   --background-activated:#E1EAF9;
-   --background-focused:#E1EAF9;
-   --background-hover:#647B9D;
-   color:#F4F6FA;
-   background-color: #180151;
-   border-radius: 25px;
-
- }
+  right: 20%;
+  left: 20%;
+  bottom: 25px;
+  .sign-btn {
+    --ion-primary-color: #180151;
+    --background: #180151;
+    --background-activated: #e1eaf9;
+    --background-focused: #e1eaf9;
+    --background-hover: #647b9d;
+    color: #f4f6fa;
+    background-color: #180151;
+    border-radius: 25px;
+  }
 }
-.sign-btn-wrap5{
+
+.color-btn {
+  --background: #180151;
+}
+
+.sign-btn-wrap5 {
   text-align: center;
   position: absolute;
-  
-    bottom:   0px;
 
+  bottom: 0px;
 }
- div[scrollx=true],div[scrolly=true] {
+div[scrollx="true"],
+div[scrolly="true"] {
   position: relative;
   overflow: hidden;
 }
 
-div[scrollx=true] {
- overflow-x: auto;
+div[scrollx="true"] {
+  overflow-x: auto;
 }
 
-div[scrolly=true] {
- overflow-y: auto;
+div[scrolly="true"] {
+  overflow-y: auto;
 }
-.text-center{
+.text-center {
   text-align: center;
 }
 
-.color{
+.color {
   color: white;
-  background-color: #215AB7;
+  background-color: #215ab7;
   text-align: center;
 }
 
-.text-right{
+.text-right {
   text-align: right;
 }
 
+ion-fab-button[data-desc] {
+  position: relative;
+}
 
+ion-fab-button[data-desc]::after {
+  position: absolute;
+  content: attr(data-desc);
+  z-index: 1;
+  right: 50px;
+  bottom: 7px;
+  color: var(--ion-color-contrast, #fff);
+  background-color: var(--ion-color-base, #fff);
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+}

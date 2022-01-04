@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-import { AngularFireDatabase, AngularFireObject } from '@angular/fire/database';
-import { LoadingController,ModalController} from '@ionic/angular';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cuentac',
@@ -9,9 +9,7 @@ import { LoadingController,ModalController} from '@ionic/angular';
   styleUrls: ['./cuentac.page.scss'],
 })
 export class CuentacPage implements OnInit {
-
-
-  id:any;
+  id: any;
   itemRef: any;
   cuentaCorriente = [];
   vdata: number;
@@ -20,50 +18,59 @@ export class CuentacPage implements OnInit {
   constructor(
     private modalCtrl: ModalController,
     private authservice: AuthService,
-    private db: AngularFireDatabase,
-    
-  ) { }
+    private db: AngularFireDatabase
+  ) {}
 
   ngOnInit() {
-    console.log(this.id)
-    this.ccorriente()
-    this.info()
+    console.log(this.id);
+    this.ccorriente();
+    this.info();
   }
 
-
-  ccorriente(){
-    this.itemRef = this.db.object('datos/'+ 'user/' + this.authservice.getUID() + '/cuentaCorriente' + '/' + this.id );
-    this.itemRef.snapshotChanges().subscribe(action => {
+  ccorriente() {
+    this.itemRef = this.db.object(
+      'datos/' +
+        'user/' +
+        this.authservice.getUID() +
+        '/cuentaCorriente' +
+        '/' +
+        this.id
+    );
+    this.itemRef.snapshotChanges().subscribe((action) => {
       //this.notify()
       let data = action.payload.val();
-      this.cuentaCorriente
-   = [];
+      this.cuentaCorriente = [];
       console.log(data);
       for (let k in data) {
         let user = data[k];
         user.key = k;
         console.log(user);
-        this.cuentaCorriente
-    .push(user)
+        this.cuentaCorriente.push(user);
       }
     });
   }
 
-  
-  dismissModal(){
+  dismissModal() {
     this.vdata = 0;
-      this.modalCtrl.dismiss({
-        vdata: 0,
-      })
-
+    this.modalCtrl.dismiss({
+      vdata: 0,
+    });
   }
 
-  info(){
-    this.db.database.ref('datos/'+ 'user/' + this.authservice.getUID()+ '/cuentaCorriente' + '/' + this.id).on('value',(snapshot) =>{
-      const data = snapshot.val()
-      this.cuenta = snapshot.val().cuenta
-      this.saldo = snapshot.val().saldo
-    })
+  info() {
+    this.db.database
+      .ref(
+        'datos/' +
+          'user/' +
+          this.authservice.getUID() +
+          '/cuentaCorriente' +
+          '/' +
+          this.id
+      )
+      .on('value', (snapshot) => {
+        const data = snapshot.val();
+        this.cuenta = snapshot.val().cuenta;
+        this.saldo = snapshot.val().saldo;
+      });
   }
-
 }
